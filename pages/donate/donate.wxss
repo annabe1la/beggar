@@ -1,1 +1,6 @@
 /* pages/donate/donate.wxss */
+.input{
+    width: 325rpx;
+    text-align: center;
+    
+}
