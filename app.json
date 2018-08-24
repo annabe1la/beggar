@@ -1,0 +1,13 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/donate/donate"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#666",
+        "navigationBarTitleText": "💚",
+        "navigationBarTextStyle": "black"
+    }
+}

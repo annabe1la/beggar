@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="bgI">
+<view class="btnWrap">
+        <button class="btn" bindtap="onDay">白天</button>
+        <button class="btn" bindtap="onNight">黑夜</button>
+    </view>
+    <view class="container">
+        <view class="userinfo">
+            <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
+        </view>
+        <view class="blessing">
+            <text class="blessing">好人一生平安</text>
+        </view>
+        <view bindtap="toDonate">请跟我来</view>
+    </view>
+    
+</view>

@@ -1,0 +1,55 @@
+/**index.wxss**/
+
+.bgI {
+    /* background-image:  */
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width:100%;
+}
+
+.container {
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    color: #f0f0f0;
+}
+
+.blessing {
+    margin-top: 50px;
+    color: #f0f0f0;
+    
+}
+
+.btnWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 200rpx;
+    height: 120rpx;
+    margin-left: 20rpx;
+    line-break: 14rpx;
+    padding: 20rpx;
+}
+
+.btn {
+    border-radius: 15rpx;
+    font-size: 14rpx;
+    align-items: center;
+}
