@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/donate/donate",
         "pages/index/index",
-        "pages/logs/logs",
-        "pages/donate/donate"
+        "pages/logs/logs"
     ],
     "window": {
         "backgroundTextStyle": "light",

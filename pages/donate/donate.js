@@ -12,8 +12,15 @@ Page({
   },
   onClick: function () {
     this.setData({
-        isLike:!this.data.isLike
+        isLike:!this.data.isLike,
+        value:this.data.isLike==true?0:1
     })
+  },
+  onChange:function(e){
+      let v = e.detail.value;
+        this.setData({
+            isLike:v==0?true:false
+        })
   },
   /**
    * 生命周期函数--监听页面加载

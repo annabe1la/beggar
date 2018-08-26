@@ -3,14 +3,19 @@
 .question {
     width: 325rpx;
     text-align: center;
-   color: rgba(0,0,0,0.4);
+    color: rgba(0, 0, 0, 0.4);
+    font-size:20px;
 }
 
 .sweetHeart {
     font-size: 250rpx;
 }
 
-.tinyHeart {
-    font-size: 14rpx;
-    line-height: 20rpx;
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 400rpx;
 }
+
+
