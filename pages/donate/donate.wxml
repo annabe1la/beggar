@@ -1,6 +1,11 @@
 <!--pages/donate/donate.wxml-->
 <view class="container">
-    
-    <view wx:if="" class="sweetHeart" bindtap="onClick">❤️</view>
+
+    <view wx:if="{{isLike==true}}" class="sweetHeart" bindtap="onClick">❤️</view>
+    <view wx:else class="sweetHeart" bindtap="onClick">💚</view>
+    <view class="question">你喜欢我吗？</view>
+    <view wx:if="{{isLike==true}}" >给钱谢谢</view>
+    <!-- <view wx:else class="">再见！</view> -->
+    <view wx:for="{{heartList}}" class="tinyheart"></view>
 
 </view>

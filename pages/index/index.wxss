@@ -53,3 +53,15 @@
     font-size: 14rpx;
     align-items: center;
 }
+.followMe{
+    display: flex;
+    margin-top: 50px;
+    color: #f0f0f0;
+    padding:10rpx;
+    height:60rpx;
+    width:180rpx;
+    align-items: center;
+    justify-content: center;
+    border:solid 2rpx #fff;
+    border-radius:40rpx;
+}

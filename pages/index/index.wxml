@@ -15,7 +15,7 @@
         <view class="blessing">
             <text class="blessing">好人一生平安</text>
         </view>
-        <view bindtap="toDonate">请跟我来</view>
+        <view class="followMe" bindtap="toDonate">请跟我来</view>
     </view>
     
 </view>
