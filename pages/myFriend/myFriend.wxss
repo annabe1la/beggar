@@ -1,0 +1,222 @@
+/* pages/myFriend/myFriend.wxss */
+.container{
+    animation: rotate1 2s infinite linear;
+    animation-name: rotate1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+@keyframes rotate1{
+0% {
+    transform: rotate(0deg);
+}
+25% {
+    transform: rotate(-15deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+75% {
+    transform: rotate(15deg);
+}
+
+100% {
+    transform: rotate(0deg);
+}
+}
+.comical {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fd8;
+    border: 5rpx solid #ea5;
+    box-shadow: 3px 8px 20px 2px rgba(0, 0, 0, 0.3),
+                0 0 20px 10px rgba(238, 170, 85, 0.7) inset,
+                -10px -20px 20px 20px rgba(244, 151, 58, 0.3) inset;
+    position: relative;
+}
+
+.mouth {
+    position: absolute;
+    width: 160px;
+    height: 140px;
+    border-radius: 50%/40%;
+    border-bottom: 6px solid #533;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    left: 20px;
+    bottom: 25px;
+}
+
+.eye1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.eye2 {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+}
+
+.eye1::before, .eye2::before {
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border: 5px solid #fb7;
+    border-radius: 100px;
+}
+
+.eye3 {
+    position: absolute;
+    top: 70px;
+    left: 5rpx;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+    transform: rotate(-150deg);
+}
+
+.eye4 {
+    position: absolute;
+    top: 17rpx;
+    left: 66px;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+    transform: rotate(72deg);
+}
+
+.eye3::before, .eye4::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 5px solid #fb7;
+    border-radius: 120px;
+}
+
+.eyeblack {
+    position: absolute;
+    top: 63px;
+    left: 21rpx;
+    width: 13px;
+    height: 13px;
+    background: #433;
+    border-radius: 10px;
+}
+
+.eyewhite {
+    position: absolute;
+    top: 0rpx;
+    left: 3px;
+    width: 76px;
+    height: 76px;
+    overflow: hidden;
+}
+
+.eyewhite::before {
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border: 35rpx solid #fff;
+    border-radius: 110px;
+}
+
+.eye {
+    position: absolute;
+    top: -10px;
+    transform: rotate(45deg);
+}
+
+.eye-right {
+    left: 40px;
+}
+
+.eye-left {
+    left: 150px;
+}
+
+.eyebrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 60%/50%;
+    border-top: 7px solid #533;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    top: 3px;
+}
+
+.eyebrow-l {
+    left: 20px;
+    transform: rotate(20deg);
+}
+
+.eyebrow-r {
+    left: 140px;
+    transform: rotate(-20deg);
+}
+
+.flush {
+    width: 40px;
+    height: 20px;
+    border-radius: 50%/50%;
+    box-shadow: 0 10px 6px 5px rgba(255, 80, 150, 0.3) inset;
+    position: absolute;
+    top: 70px;
+}
+
+.flush-r {
+    left: 140px;
+}
+
+.flush-l {
+    left: 20px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.input {
+    text-align: center;
+    width: 200px;
+}
+.eyeblack1{
+    position: absolute;
+    top: 66rpx;
+    left: 66rpx;
+    width: 13px;
+    height: 13px;
+    background: #433;
+    border-radius: 10px;
+}
+.eyeblack2{
+    position: absolute;
+    top: 11px;
+    left: 126rpx;
+    width: 13px;
+    height: 13px;
+    background: #433;
+    border-radius: 10px;
+}
+
+

@@ -17,5 +17,7 @@
     flex-direction: row;
     width: 400rpx;
 }
-
+radio{
+    transform:scale(0.7);
+}
 

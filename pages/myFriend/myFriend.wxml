@@ -1,0 +1,75 @@
+<!-- pages/myFriend/myFriend.wxml -->
+<view class="container">
+    <view wx:if="{{inputLength==3}}" class="comical">
+        <view class="mouth"></view>
+        <view class="eye eye-right">
+            <view class="eyewhite"></view>
+            <view class="eye1"></view>
+            <view class="eye2"></view>
+            <view class="eye3"></view>
+            <view class="eye4"></view>
+            <view class="eyeblack2"></view>
+        </view>
+        <view class="eye eye-left">
+            <view class="eyewhite"></view>
+            <view class="eye1"></view>
+            <view class="eye2"></view>
+            <view class="eye3"></view>
+            <view class="eye4"></view>
+            <view class="eyeblack2"></view>
+        </view>
+        <view class="eyebrow eyebrow-r"></view>
+        <view class="eyebrow eyebrow-l"></view>
+        <view class="flush flush-r"></view>
+        <view class="flush flush-l"></view>
+    </view>
+    <view wx:elif="{{inputLength==2}}" class="comical">
+        <view class="mouth"></view>
+        <view class="eye eye-right">
+            <view class="eyewhite"></view>
+            <view class="eye1"></view>
+            <view class="eye2"></view>
+            <view class="eye3"></view>
+            <view class="eye4"></view>
+            <view class="eyeblack1"></view>
+        </view>
+        <view class="eye eye-left">
+            <view class="eyewhite"></view>
+            <view class="eye1"></view>
+            <view class="eye2"></view>
+            <view class="eye3"></view>
+            <view class="eye4"></view>
+            <view class="eyeblack1"></view>
+        </view>
+        <view class="eyebrow eyebrow-r"></view>
+        <view class="eyebrow eyebrow-l"></view>
+        <view class="flush flush-r"></view>
+        <view class="flush flush-l"></view>
+    </view>
+    <view wx:else class="comical">
+        <view class="mouth"></view>
+        <view class="eye eye-right">
+            <view class="eyewhite"></view>
+            <view class="eye1"></view>
+            <view class="eye2"></view>
+            <view class="eye3"></view>
+            <view class="eye4"></view>
+            <view class="eyeblack"></view>
+        </view>
+        <view class="eye eye-left">
+            <view class="eyewhite"></view>
+            <view class="eye1"></view>
+            <view class="eye2"></view>
+            <view class="eye3"></view>
+            <view class="eye4"></view>
+            <view class="eyeblack"></view>
+        </view>
+        <view class="eyebrow eyebrow-r"></view>
+        <view class="eyebrow eyebrow-l"></view>
+        <view class="flush flush-r"></view>
+        <view class="flush flush-l"></view>
+    </view>
+</view>
+<view class="inputBox">
+    <input bindinput="watchWords" class="input" placeholder='只许写3个字' value="{{value}}" maxlength="3" bindconfirm="onShow" focus='true'></input>
+</view>

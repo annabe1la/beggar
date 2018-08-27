@@ -1,12 +1,13 @@
 {
     "pages": [
-        "pages/donate/donate",
         "pages/index/index",
+        "pages/myFriend/myFriend",
+        "pages/donate/donate",
         "pages/logs/logs"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#666",
+        "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "💚",
         "navigationBarTextStyle": "black"
     }

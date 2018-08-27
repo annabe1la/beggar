@@ -6,10 +6,10 @@
     <view class="question">你喜欢我吗？</view>
     <radio-group class="radio-group" bindchange="onChange">
         <radio class="radio" value="0">喜欢</radio>
-        <radio class="radio" value="1">不喜欢</radio>
+        <radio class="radio" value="1" checked='true'>不喜欢</radio>
     </radio-group>
-    <view wx:if="{{isLike==true}}">给钱谢谢</view>
-    <!-- <view wx:else class="">再见！</view> -->
+    <view wx:if="{{isLike==true}}">给钱谢谢!</view>
+    <view wx:else class="">再见！</view>
     <!-- <view wx:for="{{heartList}}" class="tinyheart"></view> -->
 
 </view>

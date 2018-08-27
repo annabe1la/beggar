@@ -1,7 +1,20 @@
 /**index.wxss**/
+/* https://s1.ax1x.com/2018/08/27/PLK1p9.jpg
+https://s1.ax1x.com/2018/08/27/PLK3lR.jpg
+https://s1.ax1x.com/2018/08/27/PLKYm6.jpg
+https://s1.ax1x.com/2018/08/27/PLKGOx.jpg
+https://s1.ax1x.com/2018/08/27/PLK861.jpg */
+.bgD{
+    background-image:url(https://s1.ax1x.com/2018/08/27/PLKGOx.jpg);
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    width:100%;
+    z-index: -1;
 
-.bgI {
-    /* background-image:  */
+}
+.bgN {
+    background-image:url(https://s1.ax1x.com/2018/08/27/PLK861.jpg);
     position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
     height: 100vh;
@@ -29,13 +42,19 @@
 .userinfo-nickname {
     color: #f0f0f0;
 }
-
+.userinfo-nicknameD {
+    color: violet;
+}
 .blessing {
     margin-top: 50px;
     color: #f0f0f0;
     
 }
-
+.blessingD{
+    margin-top: 50px;
+    color: violet;
+    font-weight: 100px;
+}
 .btnWrap {
     display: flex;
     flex-direction: column;
@@ -57,6 +76,19 @@
     display: flex;
     margin-top: 50px;
     color: #f0f0f0;
+    padding:10rpx;
+    height:60rpx;
+    width:180rpx;
+    align-items: center;
+    justify-content: center;
+    border:solid 2rpx #fff;
+    border-radius:40rpx;
+}
+.followMeD{
+    display: flex;
+    margin-top: 50px;
+    color: violet;
+    font-weight: 20px;
     padding:10rpx;
     height:60rpx;
     width:180rpx;
