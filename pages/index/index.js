@@ -30,6 +30,11 @@ Page({
             url: '../donate/donate'
         })
     },
+    toPaint:function(){
+        wx.navigateTo({
+            url: '../Paint/Paint'
+        })
+    },
     onLoad: function() {
         if (app.globalData.userInfo) {
             this.setData({

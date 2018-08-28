@@ -15,7 +15,8 @@
         <view class="blessing">
             <text class="{{dayorNight?'blessingD':'blessing'}}">A-ToY</text>
         </view>
-        <view class="{{dayorNight?'followMeD':'followMe'}}" bindtap="toDonate">请跟我来</view>
+        <view class="{{dayorNight?'followMeD':'followMe'}}" bindtap="toPaint">画个画吧</view>
+        <view class="{{dayorNight?'followMeD':'followMe'}}" style='width:200px;border:none;font-size:14px' bindtap="toDonate">喜欢我就跟我来吧</view>
     </view>
     
 </view>

@@ -1,0 +1,9 @@
+<!--pages/Paint/Paint.wxml-->
+<view class="container">
+    <view class="canvas-wrapper">
+        <canvas  canvas-id="painter" class="canvas-paint"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="width:350px; height:400px;display:block !important;"></canvas>
+    </view>
+</view>
+
+    <button class="btn" bindtap='penSelect'>笔</button>
+    

@@ -1,0 +1,36 @@
+/* pages/Paint/Paint.wxss */
+
+.container {
+    padding-top: 5px;
+    padding-bottom: 106px;
+}
+
+.canvas-wrapper {
+    width: 350px;
+    height: 400px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 3px #999;
+}
+.canvas-paint {
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: crosshair;
+    z-index: 999;
+}
+
+
+
+.btn {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    
+    background-color: wheat;
+    color: violet;
+    border-radius: 0px;
+}
+

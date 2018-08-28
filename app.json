@@ -1,9 +1,9 @@
 {
     "pages": [
+        "pages/Paint/Paint",
         "pages/index/index",
         "pages/myFriend/myFriend",
-        "pages/donate/donate",
-        "pages/logs/logs"
+        "pages/donate/donate"
     ],
     "window": {
         "backgroundTextStyle": "light",
