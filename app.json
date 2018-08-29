@@ -1,8 +1,8 @@
 {
     "pages": [
-        "pages/Paint/Paint",
         "pages/index/index",
         "pages/myFriend/myFriend",
+        "pages/Paint/Paint",
         "pages/donate/donate"
     ],
     "window": {
