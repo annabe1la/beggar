@@ -4,97 +4,29 @@ https://s1.ax1x.com/2018/08/27/PLK3lR.jpg
 https://s1.ax1x.com/2018/08/27/PLKYm6.jpg
 https://s1.ax1x.com/2018/08/27/PLKGOx.jpg
 https://s1.ax1x.com/2018/08/27/PLK861.jpg */
-.bgD{
-    background-image:url(https://s1.ax1x.com/2018/08/27/PLKGOx.jpg);
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.1);
-    height: 100vh;
+.container{
+    padding: 0;
+}
+.bg{
+    /* width: 100%;
+    height: 100%;  */
+    position: absolute;
+    transform:scale(0.01);
+    animation: fadeToSmall 5s ease-in-out;
+
+}
+.icon{
     width:100%;
-    background-repeat: no-repeat;
-
+    height:90px;
+    position: absolute;
+    top: 35%;
+    animation: fadeToShow 5s ease-in-out;
 }
-.bgN {
-    background-image:url(https://s1.ax1x.com/2018/08/27/PLK861.jpg);
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 100vh;
-    width:100%;
-    background-repeat: no-repeat;
+@keyframes fadeToShow{
+    100% {height:90px;}
+    0% {height: 0px;}
 }
-
-.container {
-    height: 100%;
-    justify-content: flex-start;
-}
-
-.userinfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.userinfo-avatar {
-    width: 150rpx;
-    height: 150rpx;
-    margin: 20rpx;
-    border-radius: 50%;
-}
-
-.userinfo-nickname {
-    color: #f0f0f0;
-}
-.userinfo-nicknameD {
-    color: violet;
-}
-.blessing {
-    margin-top: 50px;
-    color: #f0f0f0;
-    
-}
-.blessingD{
-    margin-top: 50px;
-    color: violet;
-    font-weight: 100px;
-}
-.btnWrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 200rpx;
-    height: 120rpx;
-    margin-left: 20rpx;
-    line-break: 14rpx;
-    padding: 20rpx;
-}
-
-.btn {
-    border-radius: 15rpx;
-    font-size: 14rpx;
-    align-items: center;
-}
-.followMe{
-    display: flex;
-    margin-top: 50px;
-    color: #f0f0f0;
-    padding:10rpx;
-    height:60rpx;
-    width:180rpx;
-    align-items: center;
-    justify-content: center;
-    border:solid 2rpx #fff;
-    border-radius:40rpx;
-}
-.followMeD{
-    display: flex;
-    margin-top: 50px;
-    color: violet;
-    font-weight: 20px;
-    padding:10rpx;
-    height:60rpx;
-    width:180rpx;
-    align-items: center;
-    justify-content: center;
-    border:solid 7rpx plum;
-    border-radius:40rpx;
+@keyframes fadeToSmall{
+    100% {transform: scale(0.01);}
+    0% {transform: scale(1);}
 }

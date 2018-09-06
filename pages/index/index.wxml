@@ -1,22 +1,5 @@
 <!--index.wxml-->
-<view class="{{dayorNight?'bgD':'bgN'}}">
-<view class="btnWrap">
-        <button class="btn" bindtap="onDay">白天</button>
-        <button class="btn" bindtap="onNight">黑夜</button>
-    </view>
-    <view class="container">
-        <view class="userinfo">
-            <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-            <block wx:else>
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-                <text class="{{dayorNight?'userinfo-nicknameD':'userinfo-nickname'}}">{{userInfo.nickName}}</text>
-            </block>
-        </view>
-        <view class="blessing">
-            <text class="{{dayorNight?'blessingD':'blessing'}}">A-ToY</text>
-        </view>
-        <view class="{{dayorNight?'followMeD':'followMe'}}" bindtap="toPaint">画个画吧</view>
-        <view class="{{dayorNight?'followMeD':'followMe'}}" style='width:200px;border:none;font-size:14px' bindtap="toDonate">喜欢我就跟我来吧</view>
-    </view>
-    
+<view class="container" bindtap='toLogin'>
+    <image class="bg" src="../../src/loading.jpg" mode="widthFix" style="opacity:{{imgOpacity}}" />
+    <image class="icon" src="../../src/evergarden.png" mode="heightFix" style="opacity:{{iconOpacity}}" />
 </view>

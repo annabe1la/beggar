@@ -1,14 +1,14 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/myFriend/myFriend",
-        "pages/Paint/Paint",
-        "pages/donate/donate"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "💚",
-        "navigationBarTextStyle": "black"
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/myFriend/myFriend",
+    "pages/Paint/Paint",
+    "pages/donate/donate"
+  ],
+    "pages/main/mainwindow": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "💖献给Violet的永恒花园",
+    "navigationBarTextStyle": "black"
+  }
 }
