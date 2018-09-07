@@ -9,11 +9,15 @@ Page({
         iconOpacity: 0
     },
     //事件处理函数
-
+    toLogin:function() {
+        wx.redirectTo({
+            url:"../login/login"
+        })
+    },
     onLoad: function () {
         // 背景逐渐透明
         timer = setInterval(() => {
-            // 背景透明度减到0.15
+            // 背景透明度减到0.1
             if (this.data.imgOpacity > 0.1) {
                 this.setData({ imgOpacity: this.data.imgOpacity - 0.05 })
             }
@@ -27,17 +31,5 @@ Page({
             }
         }, 150);
     },
-    /**
-   * 生命周期函数--监听页面显示
-   */
-    onShow: function () {
-    },
-    getUserInfo: function (e) {
-        console.log(e)
-        app.globalData.userInfo = e.detail.userInfo
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
-        })
-    }
+    
 })
