@@ -64,7 +64,7 @@ Page({
     })
   },
   enterIn:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url:"../main/main"
     })
   },

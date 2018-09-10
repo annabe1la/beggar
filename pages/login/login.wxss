@@ -43,7 +43,7 @@
 .login {
   width: 120px;
   height: 40px;
-  background-color: rgb(79, 56, 178);
+  background-color: rgba(79, 56, 178,0.7);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -56,7 +56,7 @@
 .btn {
   width: 120px;
   height: 40px;
-  background-color: rgb(79, 56, 178);
+  background-color: rgba(79, 56, 178,0.7);
   border-radius: 20px;
   display: flex;
   justify-content: center;

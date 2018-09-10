@@ -6,6 +6,8 @@ https://s1.ax1x.com/2018/08/27/PLKGOx.jpg
 https://s1.ax1x.com/2018/08/27/PLK861.jpg */
 .container{
     padding: 0;
+    width: 100vw;
+    height: 100vh;
 }
 .bg{
     /* width: 100%;

@@ -1,2 +1,12 @@
-<!--pages/main/main.wxml-->
-<text>pages/main/main.wxml</text>
+<!-- pages/main/main.wxml -->
+<view class="container">
+  <image class="cover" src="../../src/mainbg.jpeg" mode="widthFix" />
+  <image class="bg" src="../../src/milkwaybg.jpeg" style="{{onShow?'filter:blur(10px)':''}}" />
+  <block wx:if="{{onShow}}">
+    <view class="btn-area">
+      <view>热映</view>
+      <view>预告</view>
+      <view>搜索</view>
+    </view>
+  </block>
+</view>
