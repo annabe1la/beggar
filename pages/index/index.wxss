@@ -11,6 +11,7 @@ https://s1.ax1x.com/2018/08/27/PLK861.jpg */
     /* width: 100%;
     height: 100%;  */
     position: absolute;
+    border-radius: 5px;
     transform:scale(0.01);
     animation: fadeToSmall 5s ease-in-out;
 

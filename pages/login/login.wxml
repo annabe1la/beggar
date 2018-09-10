@@ -1,2 +1,15 @@
-<!--pages/login/login.wxml-->
-<image class="img" src="" />
+<!-- pages/login/login.wxml -->
+<view class="container">
+  <image class="bg" src="../../src/violet.jpg" mode="heightFix" style="{{onShow?'filter:blur(10px)':''}}" />
+  <view class="login-wrapper">
+    <view wx:if="{{onShow}}" class="login-sub-wrapper">
+      <view wx:if="{{!hasUserInfo && canIUse}}" class="login" open-type="getUserInfo" bindtap='getUserInfo'>
+        授权登录
+      </view>
+      <block wx:else>
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover" />
+        <button class="btn" bindtap="enterIn" >进入</button>
+      </block>
+    </view>
+  </view>
+</view>
