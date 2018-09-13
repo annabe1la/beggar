@@ -1,137 +1,207 @@
 // pages/Paint/Paint.js
+let ctx = wx.createCanvasContext('painter', this);
+const widths = [];
+for (let i = 1; i <= 50; i++) {
+    widths.push(i);
+}
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        isClear: false
-
-
+        color: 'black',
+        colors: ['red', '#d81e06', '#faea2a', '#ff9800', '#faf0aa', '#1afa29', '#1296db', '#13227a', '#d4237a', '#bfbfbf', '#8a8a8a', '#707070', '#515151', '#2c2c2c', "black"],
+        isPenSelect: true,
+        chooseBgHidden: true,
+        originX: 0,
+        originY: 0,
+        width: 1,
+        widths: widths,
+        index: 0,
+        onShow: false
     },
     //笔
     penSelect: function () {
-        console.log(this.data.isClear)
         this.setData({
-            isClear: !this.data.isClear
+            isPenSelect: !this.data.isPenSelect
         })
     },
-    // //橡皮
-    // eraserSelect: function () {
-    //     this.setData({
-    //         isClear: false
-    //     })
-    // },
-    touchStart: function(e) {
-        //得到触摸点的坐标
-        this.startX = e.changedTouches[0].x
-        this.startY = e.changedTouches[0].y
-        console.log(e)
-        this.context = wx.createContext()
-
-        if (this.isClear) { 
-            this.context.setStrokeStyle('#F8F8F8') 
-            this.context.setLineCap('round') 
-            this.context.setLineJoin('round')
-            this.context.setLineWidth(20)
-            this.context.save(); 
-            this.context.beginPath()
-            this.context.arc(this.startX, this.startY, 5, 0, 2 * Math.PI, true); 
-            this.context.fill(); 
-            this.context.restore(); 
-        } else {
-            this.context.setLineCap('round') 
-            this.context.beginPath()
-
-        }
+    //橡皮
+    eraserSelect: function () {
+        this.setData({
+            color: 'white'
+        })
     },
-    
+    touchStart: function (e) {
+        this.setData({
+            originX: e.changedTouches[0].x,
+            originY: e.changedTouches[0].y
+        })
+        ctx.setStrokeStyle(this.data.color);
+        ctx.setLineWidth(this.data.width);
+        ctx.setLineCap('round');
+        ctx.moveTo(e.changedTouches[0].x, e.changedTouches[0].y);
+    },
+
     //手指触摸后移动
-    touchMove: function(e) {
-
-        var startX1 = e.changedTouches[0].x
-        var startY1 = e.changedTouches[0].y
-
-        if (this.isClear) { //判断是否启用的橡皮擦功能
-
-            this.context.save(); //保存当前坐标轴的缩放、旋转、平移信息
-            this.context.moveTo(this.startX, this.startY); //把路径移动到画布中的指定点，但不创建线条
-            this.context.lineTo(startX1, startY1); //添加一个新点，然后在画布中创建从该点到最后指定点的线条
-            this.context.stroke(); //对当前路径进行描边
-            this.context.restore() //恢复之前保存过的坐标轴的缩放、旋转、平移信息
-
-            this.startX = startX1;
-            this.startY = startY1;
-
-        } else {
-            this.context.moveTo(this.startX, this.startY)
-            this.context.lineTo(startX1, startY1)
-            this.context.stroke()
-
-            this.startX = startX1;
-            this.startY = startY1;
-
-        }
+    touchMove: function (e) {
+        ctx.moveTo(this.data.originX, this.data.originY);
+        ctx.lineTo(e.touches[0].x, e.touches[0].y);
+        ctx.stroke();
+        // ctx.draw();
         wx.drawCanvas({
-            canvasId: 'painter',
-            reserve: true,
-            actions: this.context.getActions() // 获取绘图动作数组
+            canvasId: "painter",
+            actions: ctx.getActions(),
+            reserve: true
+        })
+        this.setData({
+            originX: e.touches[0].x,
+            originY: e.touches[0].y
         })
     },
-
+    touchEnd: function (e) {
+        // 就当无事发生
+    },
+    clearCanvas: function () {
+        ctx.clearActions();
+        wx.drawCanvas({
+            canvasId: "painter",
+            actions: ctx.getActions(),
+            reserve: false
+        })
+    },
+    chooseColor: function (e) {
+        var index = e.currentTarget.dataset.index;
+        this.setData({
+            color: this.data.colors[index]
+        })
+    },
+    saveSelect: function () {
+        wx.showModal({
+            title: '保存',
+            content: '是否保存当前画布的内容？',
+            success: function (res) {
+                if (res.confirm) {
+                    wx.canvasToTempFilePath({
+                        canvasId: 'painter',
+                        success: function (res) {
+                            wx.saveImageToPhotosAlbum({
+                                filePath: res.tempFilePath,
+                                success: function (res) {
+                                    wx.showToast({
+                                        title: '保存成功',
+                                    })
+                                },
+                                fail: function (res) {
+                                    wx.showToast({
+                                        title: '保存失败',
+                                        icon: 'none'
+                                    })
+                                }
+                            })
+                        },
+                        fail: function (res) {
+                            wx.showToast({
+                                title: '保存失败',
+                                icon: 'none'
+                            })
+                        }
+                    }, this)
+                }
+            }
+        })
+    },
+    widthChange: function (e) {
+        console.log(e)
+        const val = e.detail.value
+        //   year: this.data.years[val[0]],
+        //   month: this.data.months[val[1]],
+        //   day: this.data.days[val[2]]
+        this.setData({
+            index: e.detail.value,
+            width: this.data.widths[val]
+        })
+    },
+    toMyFriend: function () {
+        wx.navigateTo({
+            url: "../myFriend/myFriend"
+        })
+    },
+    skip: function () {
+        this.setData({
+            onShow: true
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
 
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function() {
+    onReady: function () {
+        let t = setTimeout(
+            () => {
+                this.setData({
+                    onShow: true,
+                });
+                clearTimeout(t)
+            }, 6000)
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
+    onShow: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function() {
+    onHide: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function() {
+    onUnload: function () {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function() {
+    onPullDownRefresh: function () {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function() {
+    onReachBottom: function () {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
+    onShareAppMessage: function () {
+        return {
+ 
+            title: '💖EvergardenVvv',
+ 
+            desc: 'Have Fun!',
+ 
+            path: '/page/login/login'
+ 
+        }
 
     }
 })

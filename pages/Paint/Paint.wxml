@@ -1,9 +1,75 @@
-<!--pages/Paint/Paint.wxml-->
+<!-- pages/Paint/Paint.wxml -->
+<image class="bg" src="../../src/painterBg.png" mode="heightFix" style="{{onShow?'filter:blur(10px)':''}}" bindtap="skip" />
+<block wx:if="{{onShow}}">
 <view class="container">
     <view class="canvas-wrapper">
-        <canvas  canvas-id="painter" class="canvas-paint"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="width:350px; height:400px;display:block !important;"></canvas>
+        <canvas canvas-id="painter" class="canvas-paint" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="width:350px; height:400px;display:block !important;"></canvas>
     </view>
 </view>
-
-    <button class="btn" bindtap='penSelect'>笔</button>
-    
+<view class="btn-area">
+    <view class="btn-wrapper">
+        <view class="btn" bindtap='penSelect'>
+            <image src="../../src/pencil.png" style="width:72rpx;height:72rpx;border-radius:50%;" />
+        </view>
+        <view class="btn" bindtap="eraserSelect">
+            <image src="../../src/eraser.png" style="width:72rpx;height:72rpx;border-radius:50%;" />
+        </view>
+    </view>
+    <view class="btn-wrapper">
+        <view class="btn" style="border-radius:50%;background-color:rgba(79, 56, 178,0.5);color:white;" bindtap="clearCanvas">
+            清空画布
+        </view>
+        <!-- <view class="btn" style="border-radius:50%;background-color:rgba(79, 56, 178,0.5);color:white;" bindtap="chooseBg">
+            选取背景
+        </view> -->
+        <view class="btn" style="border-radius:50%;background-color:rgba(79, 56, 178,0.5);color:white;" bindtap="saveSelect">
+            保存
+        </view>
+        <view class="btn" style="border-radius:50%;background-color:rgba(79, 56, 178,0.5);color:white;" bindtap="toMyFriend">
+            Portal
+        </view>
+        <!-- <view class="btn" style="border-radius:50%;background-color:rgba(79, 56, 178,0.5);color:white;" bindtap="">
+            撤销
+        </view> -->
+    </view>
+</view>
+<block wx:if="{{isPenSelect}}">
+    <!-- 线条粗细TODO -->
+    <view class="width-wrapper">
+        <view></view>
+        <picker style=" width: 100px;height: 60px;" bindchange="widthChange" value="{{index}}" range="{{widths}}">
+            <view class="width-picker">粗细:{{widths[index]}}px</view>
+            <!-- <picker-view-column>
+                <view wx:for="{{widths}}" wx:key="{{item}}" style="line-height: 50rpx;text-align:center;">
+                    {{item}}px
+                </view>
+            </picker-view-column> -->
+        </picker>
+    </view>
+    <!-- 颜色 -->
+    <scroll-view class='scroll' scroll-x='true'>
+        <view class='colors' data-index='0' style='background:{{colors[0]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='1' style='background:{{colors[1]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='2' style='background:{{colors[2]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='3' style='background:{{colors[3]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='4' style='background:{{colors[4]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='5' style='background:{{colors[5]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='6' style='background:{{colors[6]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='7' style='background:{{colors[7]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='8' style='background:{{colors[8]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='9' style='background:{{colors[9]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='10' style='background:{{colors[10]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='11' style='background:{{colors[11]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='12' style='background:{{colors[12]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='13' style='background:{{colors[13]}}' bindtap='chooseColor'></view>
+        <view class='colors' data-index='14' style='background:{{colors[14]}}' bindtap='chooseColor'></view>
+    </scroll-view>
+</block>
+<action-sheet hidden="{{chooseBgHidden}}" bindchange="_cancelEvent">
+    <block>
+        <view class='modal-item' data-index="{{0}}" bindtap="selectBg">拍照</view>
+        <view class='modal-item' data-index="{{1}}" bindtap="selectBg">从手机相册选择</view>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+</block>

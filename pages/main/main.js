@@ -1,4 +1,5 @@
 // pages/main/main.js
+
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
@@ -23,10 +24,17 @@ Page({
       () => {
         this.setData({
           onShow: true,
-        })
+        });
+        clearTimeout(t)
       }, 6000)
   },
 
+  // 画画页面跳转
+  toPaint: function () {
+    wx.navigateTo({
+      url: "../Paint/Paint"
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

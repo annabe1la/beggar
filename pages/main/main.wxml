@@ -3,10 +3,17 @@
   <image class="cover" src="../../src/mainbg.jpeg" mode="widthFix" />
   <image class="bg" src="../../src/milkwaybg.jpeg" style="{{onShow?'filter:blur(10px)':''}}" />
   <block wx:if="{{onShow}}">
+  <view style="margin-top:200px;color:rgb(79, 56, 178);background-color: rgba(256, 256, 256,0.7);width:260px;height:40px;border-radius:20px;display:flex;justify-content:center;align-items:center">没有数据打扰了</view>
     <view class="btn-area">
-      <view>热映</view>
-      <view>预告</view>
-      <view>搜索</view>
+      <view id="switchTab" style="background-color: rgba(79, 56, 178,0.5);box-shadow:1px 1px 2px 2px rgba(50%,50%,60%,0.35);">
+        <view style="color:white;">热映</view>
+      </view>
+      <view id="switchTab" style="box-shadow:1px 1px 2px 2px rgba(50%,50%,60%,0.35);" >
+        <view>预告</view>
+      </view>
+      <view id="switchTab" style="background-color: rgba(79, 56, 178,0.7);box-shadow:1px 1px 2px 2px rgba(50%,50%,60%,0.35);" bindtap="toPaint">
+        <view style="color:white;">PAINT</view>
+      </view>
     </view>
   </block>
 </view>

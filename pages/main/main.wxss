@@ -39,7 +39,12 @@
   bottom: 0;
   height: 98rpx;
   background-color: white;
-
+}
+#switchTab{
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @keyframes showOut {
   100% {

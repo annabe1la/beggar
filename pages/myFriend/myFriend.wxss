@@ -1,5 +1,5 @@
 /* pages/myFriend/myFriend.wxss */
-.container{
+.container {
     animation: rotate1 2s infinite linear;
     animation-name: rotate1;
     animation-duration: 2s;
@@ -10,24 +10,7 @@
     animation-fill-mode: none;
     animation-play-state: running;
 }
-@keyframes rotate1{
-0% {
-    transform: rotate(0deg);
-}
-25% {
-    transform: rotate(-15deg);
-}
-50% {
-    transform: rotate(0deg);
-}
-75% {
-    transform: rotate(15deg);
-}
 
-100% {
-    transform: rotate(0deg);
-}
-}
 .comical {
     width: 200px;
     height: 200px;
@@ -35,8 +18,8 @@
     background-color: #fd8;
     border: 5rpx solid #ea5;
     box-shadow: 3px 8px 20px 2px rgba(0, 0, 0, 0.3),
-                0 0 20px 10px rgba(238, 170, 85, 0.7) inset,
-                -10px -20px 20px 20px rgba(244, 151, 58, 0.3) inset;
+        0 0 20px 10px rgba(238, 170, 85, 0.7) inset,
+        -10px -20px 20px 20px rgba(244, 151, 58, 0.3) inset;
     position: relative;
 }
 
@@ -70,7 +53,8 @@
     overflow: hidden;
 }
 
-.eye1::before, .eye2::before {
+.eye1::before,
+.eye2::before {
     content: "";
     width: 300px;
     height: 300px;
@@ -99,7 +83,8 @@
     transform: rotate(72deg);
 }
 
-.eye3::before, .eye4::before {
+.eye3::before,
+.eye4::before {
     content: "";
     position: absolute;
     width: 14px;
@@ -193,14 +178,15 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    
+    margin: 20px;
 }
 
 .input {
     text-align: center;
     width: 200px;
 }
-.eyeblack1{
+
+.eyeblack1 {
     position: absolute;
     top: 66rpx;
     left: 66rpx;
@@ -209,7 +195,8 @@
     background: #433;
     border-radius: 10px;
 }
-.eyeblack2{
+
+.eyeblack2 {
     position: absolute;
     top: 11px;
     left: 126rpx;
@@ -219,4 +206,41 @@
     border-radius: 10px;
 }
 
+.myIntroduce {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(79, 56, 178, 0.5);
+    color: white;
+    width: 310px;
+    height: 60px ;
+    font-size: 35rpx;
+    border-radius: 30px;
+    
+}
 
+@keyframes rotate1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

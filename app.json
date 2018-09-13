@@ -1,16 +1,15 @@
 {
     "pages": [
-        "pages/main/main",
         "pages/index/index",
+        "pages/main/main",
         "pages/login/login",
-        "pages/myFriend/myFriend",
         "pages/Paint/Paint",
-        "pages/donate/donate"
+        "pages/myFriend/myFriend"
     ],
-    "pages/main/mainwindow": {
+    "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "💖献给Violet的永恒花园",
+        "navigationBarTitleText": "💖Violet的永恒花园",
         "navigationBarTextStyle": "black"
     }
 }

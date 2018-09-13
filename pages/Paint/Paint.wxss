@@ -1,8 +1,15 @@
 /* pages/Paint/Paint.wxss */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: showOut 5s ease-in-out;
+}
 
 .container {
     padding-top: 5px;
-    padding-bottom: 106px;
+    padding-bottom: 33px;
 }
 
 .canvas-wrapper {
@@ -12,6 +19,7 @@
     background: #fff;
     box-shadow: 0 0 3px #999;
 }
+
 .canvas-paint {
     width: 350px;
     height: 400px;
@@ -22,15 +30,87 @@
     z-index: 999;
 }
 
-
-
-.btn {
+/* 一点功能按钮 */
+.btn-area {
+    display: flex;
+    flex-direction: column;
+    margin: 10rpx;
+    width: 250px;
     position: fixed;
-    bottom: 0;
-    width: 100vw;
-    
-    background-color: wheat;
-    color: violet;
-    border-radius: 0px;
+    bottom: 50px;
 }
 
+.btn-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+
+.btn-wrapper .btn {
+    width: 72rpx;
+    height: 72rpx;
+    margin-left: 30rpx;
+    margin-bottom: 10rpx;
+    font-size: 15rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.width-wrapper {
+    position: fixed;
+    bottom: 75px;
+    right: 20rpx;
+}
+
+.width-picker {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(79, 56, 178, 0.3);
+    color: white;
+    margin: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.scroll {
+    width: 100%;
+    background: rgba(79, 56, 178, 0.3);
+    white-space: nowrap;
+    position: fixed;
+    bottom: 0;
+}
+
+.colors {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.modal-item {
+    width: 100%;
+    padding: 40rpx 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+@keyframes showOut {
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}

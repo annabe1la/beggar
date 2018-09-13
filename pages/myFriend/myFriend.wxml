@@ -73,3 +73,4 @@
 <view class="inputBox">
     <input bindinput="watchWords" class="input" placeholder='只许写3个字' value="{{value}}" maxlength="3" bindconfirm="onShow" focus='true'></input>
 </view>
+<view class="myIntroduce">@AnNabe1la靖丶，喜欢前端，喜欢挑战新的事物,请多多指教！</view>
